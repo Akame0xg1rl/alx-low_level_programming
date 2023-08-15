@@ -1,6 +1,7 @@
 #include <unistd.h>
 
 /**
+ * main - Entry point
  * Prints the message "_putchar" without using standard library.
  * Return: 0
  */
