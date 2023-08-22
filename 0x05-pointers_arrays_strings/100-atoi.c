@@ -2,37 +2,40 @@
 /**
  * _atoi - converts a string to an integer
  * @s: string to be converted
+ *
  * Return: the int converted from the string
  */
 int _atoi(char *s)
 {
-int index = 0;   
-int dashCount = 0; 
-int number = 0;   
-int length = 0;   
-int foundNumber = 0; 
-int currentDigit = 0;
+	int i, d, n, len, f, digit;
 
-while (s[length] != '\0')
-	length++;
-while (index < length && foundNumber == 0)
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[len] != '\0')
+		len++;
+	while (i < len && f == 0)
 	{
-if (s[index] == '-')
-	++dashCount;
-if (s[index] >= '0' && s[index] <= '9')
-	{
-	currentDigit = s[index] - '0';
-if (dashCount % 2)
-	currentDigit = -currentDigit;
-        number = number * 10 + currentDigit;
-        foundNumber = 1;
-if (s[index + 1] < '0' || s[index + 1] > '9')
-        break;
-	foundNumber = 0;
+		if (s[i] == '-')
+			++d;
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
+		}
+		i++;
 	}
-	index++;
-	}
-if (foundNumber == 0)
-        return (0);
-	return (number);
+	if (f == 0)
+		return (0);
+	return (n);
 }
