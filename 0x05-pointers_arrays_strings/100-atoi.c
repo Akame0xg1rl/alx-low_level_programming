@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
  * _atoi - converts a string to an integer
  * @s: string to be converted
  *
  * Return: the int converted from the string
  */
-
 int _atoi(char *s)
 {
 	int index = 0;   
@@ -18,13 +16,10 @@ int _atoi(char *s)
 
 	while (s[length] != '\0')
 		length++;
-
-
 	while (index < length && foundNumber == 0)
 	{
 		if (s[index] == '-')
 			++dashCount;
-
 		if (s[index] >= '0' && s[index] <= '9')
 		{
 			currentDigit = s[index] - '0';
@@ -38,9 +33,7 @@ int _atoi(char *s)
 		}
 		index++;
 	}
-
 	if (foundNumber == 0)
 		return (0);
-
 	return (number);
 }
