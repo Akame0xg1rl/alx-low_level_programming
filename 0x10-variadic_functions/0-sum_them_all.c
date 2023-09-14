@@ -2,24 +2,24 @@
 #include <stdarg.h>
 
 /**
- * sum_them_all - Calculate the sum of a variable number.
- * @num: NUmber of integers to sum.
- * @...: Variable number of integer arguments.
- * 
+ * sum_them_all - Returns the sum of all its paramters.
+ * @n: The numb of paramters passed to the function.
+ * @...: A variable numb of paramters to calculate the sum of.
+ *
  * Return: If n == 0 - 0.
+ *         Otherwise - the sum of all parameters.
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list args;
-        unsigned int i, sum = 0;
+	va_list ap;
+	unsigned int i, sum = 0;
 
-	va_start(args, n);
+	va_start(ap, n);
 
 	for (i = 0; i < n; i++)
+		sum += va_arg(ap, int);
 
-	         sum += va_arg(args, int);	
-
-	va_end(args);
+	va_end(ap);
 
 	return (sum);
 }
