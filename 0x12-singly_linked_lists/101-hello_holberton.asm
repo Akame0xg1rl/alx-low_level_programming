@@ -1,14 +1,12 @@
 section .data
-    format db 'Hello, %s\n', 0  ; Define a format string with a placeholder for a string argument
-    msg db 'Helberton', 0      ; Define the string to be used as an argument for printf
+    msg db 'Hello, Helberton', 0xa, 0  ; Define the string to be printed with a newline character
 
 section .text
     extern printf
     global main
 
 main:
-    mov edi, format
-    mov esi, msg        ; Load the address of the string into esi
+    mov edi, msg   ; Load the address of the string into edi
     xor eax, eax
     call printf
     mov eax, 0
