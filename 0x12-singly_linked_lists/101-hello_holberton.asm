@@ -1,5 +1,5 @@
 section .data
-    format db 'Hello, %s', 0  ; Define a format string with a placeholder for a string argument
+    format db 'Hello, %s\n', 0  ; Define a format string with a placeholder for a string argument
     msg db 'Helberton', 0      ; Define the string to be used as an argument for printf
 
 section .text
