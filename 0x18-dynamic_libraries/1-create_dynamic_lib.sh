@@ -1,3 +1,4 @@
-#!/usr/bin/bash
-gcc -Wall -c -fPIC *.c 
-gcc  -shared *.o  -o liball.so 
+#!/bin/bash
+
+# Compile all .c files into a shared library
+gcc -shared -fPIC -o liball.so *.c 
